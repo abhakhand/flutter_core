@@ -84,4 +84,39 @@ enum AppBreakpoint {
 
   /// The ending pixel width of the breakpoint range.
   final int end;
+
+  /// Instance method to handle different breakpoints and return a result.
+  TResult when<TResult extends Object?>({
+    required TResult Function() smallPhone,
+    required TResult Function() regularPhone,
+    required TResult Function() largePhone,
+    required TResult Function() smallTablet,
+    required TResult Function() regularTablet,
+    required TResult Function() smallDesktop,
+    required TResult Function() regularDesktop,
+    required TResult Function() largeDesktop,
+    required TResult Function() extraLargeDesktop,
+  }) {
+    final handlers = <AppBreakpoint, TResult Function()>{
+      AppBreakpoint.smallPhone: smallPhone,
+      AppBreakpoint.regularPhone: regularPhone,
+      AppBreakpoint.largePhone: largePhone,
+      AppBreakpoint.smallTablet: smallTablet,
+      AppBreakpoint.regularTablet: regularTablet,
+      AppBreakpoint.smallDesktop: smallDesktop,
+      AppBreakpoint.regularDesktop: regularDesktop,
+      AppBreakpoint.largeDesktop: largeDesktop,
+      AppBreakpoint.extraLargeDesktop: extraLargeDesktop,
+    };
+
+    // Ensure all enum values are covered
+    assert(handlers.keys.length == AppBreakpoint.values.length, '');
+
+    // Use the current instance to get the handler
+    if (handlers.containsKey(this)) {
+      return handlers[this]!();
+    }
+
+    throw ArgumentError('Unhandled breakpoint value');
+  }
 }

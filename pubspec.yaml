@@ -1,6 +1,6 @@
 name: flutter_core
 description: "A new Flutter package project."
-version: 0.0.2
+version: 0.0.3
 
 environment:
   sdk: ">=3.4.4 <4.0.0"
@@ -17,4 +17,5 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.5.2
+  mocktail: ^1.0.4
   very_good_analysis: ^6.0.0

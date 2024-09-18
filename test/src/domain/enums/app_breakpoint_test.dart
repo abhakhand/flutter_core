@@ -66,4 +66,143 @@ void main() {
       expect(breakpoint.end, 5500);
     });
   });
+
+  group('AppBreakpoint when method', () {
+    test('should return correct values for each breakpoint', () {
+      expect(
+        AppBreakpoint.smallPhone.when(
+          smallPhone: () => 1.0,
+          regularPhone: () => 2.0,
+          largePhone: () => 3.0,
+          smallTablet: () => 4.0,
+          regularTablet: () => 5.0,
+          smallDesktop: () => 6.0,
+          regularDesktop: () => 7.0,
+          largeDesktop: () => 8.0,
+          extraLargeDesktop: () => 9.0,
+        ),
+        equals(1.0),
+      );
+
+      expect(
+        AppBreakpoint.regularPhone.when(
+          smallPhone: () => 1.0,
+          regularPhone: () => 2.0,
+          largePhone: () => 3.0,
+          smallTablet: () => 4.0,
+          regularTablet: () => 5.0,
+          smallDesktop: () => 6.0,
+          regularDesktop: () => 7.0,
+          largeDesktop: () => 8.0,
+          extraLargeDesktop: () => 9.0,
+        ),
+        equals(2.0),
+      );
+
+      expect(
+        AppBreakpoint.largePhone.when(
+          smallPhone: () => 1.0,
+          regularPhone: () => 2.0,
+          largePhone: () => 3.0,
+          smallTablet: () => 4.0,
+          regularTablet: () => 5.0,
+          smallDesktop: () => 6.0,
+          regularDesktop: () => 7.0,
+          largeDesktop: () => 8.0,
+          extraLargeDesktop: () => 9.0,
+        ),
+        equals(3.0),
+      );
+
+      expect(
+        AppBreakpoint.smallTablet.when(
+          smallPhone: () => 1.0,
+          regularPhone: () => 2.0,
+          largePhone: () => 3.0,
+          smallTablet: () => 4.0,
+          regularTablet: () => 5.0,
+          smallDesktop: () => 6.0,
+          regularDesktop: () => 7.0,
+          largeDesktop: () => 8.0,
+          extraLargeDesktop: () => 9.0,
+        ),
+        equals(4.0),
+      );
+
+      expect(
+        AppBreakpoint.regularTablet.when(
+          smallPhone: () => 1.0,
+          regularPhone: () => 2.0,
+          largePhone: () => 3.0,
+          smallTablet: () => 4.0,
+          regularTablet: () => 5.0,
+          smallDesktop: () => 6.0,
+          regularDesktop: () => 7.0,
+          largeDesktop: () => 8.0,
+          extraLargeDesktop: () => 9.0,
+        ),
+        equals(5.0),
+      );
+
+      expect(
+        AppBreakpoint.smallDesktop.when(
+          smallPhone: () => 1.0,
+          regularPhone: () => 2.0,
+          largePhone: () => 3.0,
+          smallTablet: () => 4.0,
+          regularTablet: () => 5.0,
+          smallDesktop: () => 6.0,
+          regularDesktop: () => 7.0,
+          largeDesktop: () => 8.0,
+          extraLargeDesktop: () => 9.0,
+        ),
+        equals(6.0),
+      );
+
+      expect(
+        AppBreakpoint.regularDesktop.when(
+          smallPhone: () => 1.0,
+          regularPhone: () => 2.0,
+          largePhone: () => 3.0,
+          smallTablet: () => 4.0,
+          regularTablet: () => 5.0,
+          smallDesktop: () => 6.0,
+          regularDesktop: () => 7.0,
+          largeDesktop: () => 8.0,
+          extraLargeDesktop: () => 9.0,
+        ),
+        equals(7.0),
+      );
+
+      expect(
+        AppBreakpoint.largeDesktop.when(
+          smallPhone: () => 1.0,
+          regularPhone: () => 2.0,
+          largePhone: () => 3.0,
+          smallTablet: () => 4.0,
+          regularTablet: () => 5.0,
+          smallDesktop: () => 6.0,
+          regularDesktop: () => 7.0,
+          largeDesktop: () => 8.0,
+          extraLargeDesktop: () => 9.0,
+        ),
+        equals(8.0),
+      );
+
+      expect(
+        AppBreakpoint.extraLargeDesktop.when(
+          smallPhone: () => 1.0,
+          regularPhone: () => 2.0,
+          largePhone: () => 3.0,
+          smallTablet: () => 4.0,
+          regularTablet: () => 5.0,
+          smallDesktop: () => 6.0,
+          regularDesktop: () => 7.0,
+          largeDesktop: () => 8.0,
+          extraLargeDesktop: () => 9.0,
+        ),
+        equals(9.0),
+      );
+    });
+  });
 }
