@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('Failure', () {
     test('Failure.basic creates an instance', () {
-      const failure = Failure.basic();
+      const failure = Failure.basic('');
       expect(failure, isA<Failure>());
       expect(
         failure.map(

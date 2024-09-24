@@ -11,7 +11,7 @@ class Status with _$Status {
   const factory Status.loading() = _Loading;
   const factory Status.empty() = _Empty;
   const factory Status.success() = _Success;
-  const factory Status.failure([@Default(Failure.basic()) Failure failure]) =
+  const factory Status.failure([@Default(Failure.basic('')) Failure failure]) =
       _StatusFailure;
   const factory Status.refreshing() = _Refreshing;
   const factory Status.cacheSuccess() = _CacheSuccess;

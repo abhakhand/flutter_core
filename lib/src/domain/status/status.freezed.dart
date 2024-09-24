@@ -709,7 +709,8 @@ class __$$StatusFailureImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$StatusFailureImpl extends _StatusFailure {
-  const _$StatusFailureImpl([this.failure = const Failure.basic()]) : super._();
+  const _$StatusFailureImpl([this.failure = const Failure.basic('')])
+      : super._();
 
   @override
   @JsonKey()
