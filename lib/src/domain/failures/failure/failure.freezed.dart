@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Failure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() basic,
+    required TResult Function(String? message) basic,
     required TResult Function() value,
     required TResult Function() connection,
     required TResult Function(String? message) unexpected,
@@ -29,7 +29,7 @@ mixin _$Failure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? basic,
+    TResult? Function(String? message)? basic,
     TResult? Function()? value,
     TResult? Function()? connection,
     TResult? Function(String? message)? unexpected,
@@ -40,7 +40,7 @@ mixin _$Failure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? basic,
+    TResult Function(String? message)? basic,
     TResult Function()? value,
     TResult Function()? connection,
     TResult Function(String? message)? unexpected,
@@ -108,6 +108,8 @@ abstract class _$$BasicImplCopyWith<$Res> {
   factory _$$BasicImplCopyWith(
           _$BasicImpl value, $Res Function(_$BasicImpl) then) =
       __$$BasicImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? message});
 }
 
 /// @nodoc
@@ -117,31 +119,55 @@ class __$$BasicImplCopyWithImpl<$Res>
   __$$BasicImplCopyWithImpl(
       _$BasicImpl _value, $Res Function(_$BasicImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$BasicImpl(
+      freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$BasicImpl implements _Basic {
-  const _$BasicImpl();
+  const _$BasicImpl(this.message);
+
+  @override
+  final String? message;
 
   @override
   String toString() {
-    return 'Failure.basic()';
+    return 'Failure.basic(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BasicImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$BasicImpl &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BasicImplCopyWith<_$BasicImpl> get copyWith =>
+      __$$BasicImplCopyWithImpl<_$BasicImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() basic,
+    required TResult Function(String? message) basic,
     required TResult Function() value,
     required TResult Function() connection,
     required TResult Function(String? message) unexpected,
@@ -149,13 +175,13 @@ class _$BasicImpl implements _Basic {
     required TResult Function(String? message) cache,
     required TResult Function(AuthFailure failure) auth,
   }) {
-    return basic();
+    return basic(message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? basic,
+    TResult? Function(String? message)? basic,
     TResult? Function()? value,
     TResult? Function()? connection,
     TResult? Function(String? message)? unexpected,
@@ -163,13 +189,13 @@ class _$BasicImpl implements _Basic {
     TResult? Function(String? message)? cache,
     TResult? Function(AuthFailure failure)? auth,
   }) {
-    return basic?.call();
+    return basic?.call(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? basic,
+    TResult Function(String? message)? basic,
     TResult Function()? value,
     TResult Function()? connection,
     TResult Function(String? message)? unexpected,
@@ -179,7 +205,7 @@ class _$BasicImpl implements _Basic {
     required TResult orElse(),
   }) {
     if (basic != null) {
-      return basic();
+      return basic(message);
     }
     return orElse();
   }
@@ -232,7 +258,12 @@ class _$BasicImpl implements _Basic {
 }
 
 abstract class _Basic implements Failure {
-  const factory _Basic() = _$BasicImpl;
+  const factory _Basic(final String? message) = _$BasicImpl;
+
+  String? get message;
+  @JsonKey(ignore: true)
+  _$$BasicImplCopyWith<_$BasicImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -273,7 +304,7 @@ class _$ValueImpl implements _Value {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() basic,
+    required TResult Function(String? message) basic,
     required TResult Function() value,
     required TResult Function() connection,
     required TResult Function(String? message) unexpected,
@@ -287,7 +318,7 @@ class _$ValueImpl implements _Value {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? basic,
+    TResult? Function(String? message)? basic,
     TResult? Function()? value,
     TResult? Function()? connection,
     TResult? Function(String? message)? unexpected,
@@ -301,7 +332,7 @@ class _$ValueImpl implements _Value {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? basic,
+    TResult Function(String? message)? basic,
     TResult Function()? value,
     TResult Function()? connection,
     TResult Function(String? message)? unexpected,
@@ -405,7 +436,7 @@ class _$ConnectionImpl implements _Connection {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() basic,
+    required TResult Function(String? message) basic,
     required TResult Function() value,
     required TResult Function() connection,
     required TResult Function(String? message) unexpected,
@@ -419,7 +450,7 @@ class _$ConnectionImpl implements _Connection {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? basic,
+    TResult? Function(String? message)? basic,
     TResult? Function()? value,
     TResult? Function()? connection,
     TResult? Function(String? message)? unexpected,
@@ -433,7 +464,7 @@ class _$ConnectionImpl implements _Connection {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? basic,
+    TResult Function(String? message)? basic,
     TResult Function()? value,
     TResult Function()? connection,
     TResult Function(String? message)? unexpected,
@@ -563,7 +594,7 @@ class _$UnexpectedImpl implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() basic,
+    required TResult Function(String? message) basic,
     required TResult Function() value,
     required TResult Function() connection,
     required TResult Function(String? message) unexpected,
@@ -577,7 +608,7 @@ class _$UnexpectedImpl implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? basic,
+    TResult? Function(String? message)? basic,
     TResult? Function()? value,
     TResult? Function()? connection,
     TResult? Function(String? message)? unexpected,
@@ -591,7 +622,7 @@ class _$UnexpectedImpl implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? basic,
+    TResult Function(String? message)? basic,
     TResult Function()? value,
     TResult Function()? connection,
     TResult Function(String? message)? unexpected,
@@ -734,7 +765,7 @@ class _$ApiFailureImpl implements _ApiFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() basic,
+    required TResult Function(String? message) basic,
     required TResult Function() value,
     required TResult Function() connection,
     required TResult Function(String? message) unexpected,
@@ -748,7 +779,7 @@ class _$ApiFailureImpl implements _ApiFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? basic,
+    TResult? Function(String? message)? basic,
     TResult? Function()? value,
     TResult? Function()? connection,
     TResult? Function(String? message)? unexpected,
@@ -762,7 +793,7 @@ class _$ApiFailureImpl implements _ApiFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? basic,
+    TResult Function(String? message)? basic,
     TResult Function()? value,
     TResult Function()? connection,
     TResult Function(String? message)? unexpected,
@@ -899,7 +930,7 @@ class _$CacheFailureImpl implements _CacheFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() basic,
+    required TResult Function(String? message) basic,
     required TResult Function() value,
     required TResult Function() connection,
     required TResult Function(String? message) unexpected,
@@ -913,7 +944,7 @@ class _$CacheFailureImpl implements _CacheFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? basic,
+    TResult? Function(String? message)? basic,
     TResult? Function()? value,
     TResult? Function()? connection,
     TResult? Function(String? message)? unexpected,
@@ -927,7 +958,7 @@ class _$CacheFailureImpl implements _CacheFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? basic,
+    TResult Function(String? message)? basic,
     TResult Function()? value,
     TResult Function()? connection,
     TResult Function(String? message)? unexpected,
@@ -1072,7 +1103,7 @@ class _$FailureAuthImpl implements FailureAuth {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() basic,
+    required TResult Function(String? message) basic,
     required TResult Function() value,
     required TResult Function() connection,
     required TResult Function(String? message) unexpected,
@@ -1086,7 +1117,7 @@ class _$FailureAuthImpl implements FailureAuth {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? basic,
+    TResult? Function(String? message)? basic,
     TResult? Function()? value,
     TResult? Function()? connection,
     TResult? Function(String? message)? unexpected,
@@ -1100,7 +1131,7 @@ class _$FailureAuthImpl implements FailureAuth {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? basic,
+    TResult Function(String? message)? basic,
     TResult Function()? value,
     TResult Function()? connection,
     TResult Function(String? message)? unexpected,

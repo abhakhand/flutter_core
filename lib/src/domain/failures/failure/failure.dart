@@ -20,7 +20,7 @@ class Failure with _$Failure implements Exception {
   ///
   /// This can be used for generic failures that do not
   /// require specific details.
-  const factory Failure.basic() = _Basic;
+  const factory Failure.basic(String? message) = _Basic;
 
   /// Creates a value failure with no additional information.
   ///

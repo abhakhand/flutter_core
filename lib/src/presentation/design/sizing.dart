@@ -96,8 +96,8 @@ class Sizing {
 
   /// Large border radius, for larger UI components.
   ///
-  /// **Value:** 16.0 pixels.
-  static const largeRadius = 16.0;
+  /// **Value:** 20.0 pixels.
+  static const largeRadius = 20.0;
 
   /// Circular border radius, used to create a fully circular shape.
   ///
