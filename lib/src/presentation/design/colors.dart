@@ -69,6 +69,26 @@ abstract class IColors {
   /// **Value:** `0x8AFFFFFF`
   Color get tertiaryFontDark => Colors.white54;
 
+  /// Primary icon color for the light theme.
+  ///
+  /// **Value:** `0xFF000000`
+  Color get primaryIconLight => Colors.black;
+
+  /// Secondary icon color for the light theme.
+  ///
+  /// **Value:** `0xFF9E9E9E`
+  Color get secondryIconLight => Colors.grey;
+
+  /// Primary icon color for the dark theme.
+  ///
+  /// **Value:** `0xFFFFFFFF`
+  Color get primaryIconDark => Colors.white;
+
+  /// Secondary icon color for the dark theme.
+  ///
+  /// **Value:** `0xFF616161`
+  Color get secondryIconDark => Colors.grey.shade700;
+
   /// Base color for shimmer effects in the light theme.
   ///
   /// **Value:** `0xFFF1F1F1`
