@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_core/src/presentation/design/colors.dart';
@@ -9,6 +11,9 @@ abstract class IThemeDataExtension {
   Color get primaryFontColor;
   Color get secondaryFontColor;
   Color get tertiaryFontColor;
+
+  Color get primaryIconColor;
+  Color get secondaryIconColor;
 
   Color get shimmerBaseColor;
   Color get shimmerHighlightColor;
@@ -80,6 +85,14 @@ class ThemeDataExtension implements IThemeDataExtension {
   @override
   Color get tertiaryFontColor =>
       isDark ? colors.tertiaryFontDark : colors.tertiaryFontLight;
+
+  @override
+  Color get primaryIconColor =>
+      isDark ? colors.primaryIconDark : colors.primaryIconLight;
+
+  @override
+  Color get secondaryIconColor =>
+      isDark ? colors.secondryIconDark : colors.secondryIconLight;
 
   @override
   Color get shimmerBaseColor =>
