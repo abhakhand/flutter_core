@@ -152,7 +152,7 @@ abstract interface class AppTypography {
   ///
   /// Returns a `TextStyle` with a font size of 32.0 pixels and font weight 500.
   static TextStyle titleLarge = TextStyle(
-    fontSize: titleRegularFontSize,
+    fontSize: titleLargeFontSize,
     fontVariations: const [FontVariation.weight(500)],
   );
 
