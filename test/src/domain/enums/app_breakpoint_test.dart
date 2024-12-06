@@ -80,6 +80,7 @@ void main() {
           regularDesktop: () => 7.0,
           largeDesktop: () => 8.0,
           extraLargeDesktop: () => 9.0,
+          hugeDesktop: () => 10.0,
         ),
         equals(1.0),
       );
@@ -95,6 +96,7 @@ void main() {
           regularDesktop: () => 7.0,
           largeDesktop: () => 8.0,
           extraLargeDesktop: () => 9.0,
+          hugeDesktop: () => 10.0,
         ),
         equals(2.0),
       );
@@ -110,6 +112,7 @@ void main() {
           regularDesktop: () => 7.0,
           largeDesktop: () => 8.0,
           extraLargeDesktop: () => 9.0,
+          hugeDesktop: () => 10.0,
         ),
         equals(3.0),
       );
@@ -125,6 +128,7 @@ void main() {
           regularDesktop: () => 7.0,
           largeDesktop: () => 8.0,
           extraLargeDesktop: () => 9.0,
+          hugeDesktop: () => 10.0,
         ),
         equals(4.0),
       );
@@ -140,6 +144,7 @@ void main() {
           regularDesktop: () => 7.0,
           largeDesktop: () => 8.0,
           extraLargeDesktop: () => 9.0,
+          hugeDesktop: () => 10.0,
         ),
         equals(5.0),
       );
@@ -155,6 +160,7 @@ void main() {
           regularDesktop: () => 7.0,
           largeDesktop: () => 8.0,
           extraLargeDesktop: () => 9.0,
+          hugeDesktop: () => 10.0,
         ),
         equals(6.0),
       );
@@ -170,6 +176,7 @@ void main() {
           regularDesktop: () => 7.0,
           largeDesktop: () => 8.0,
           extraLargeDesktop: () => 9.0,
+          hugeDesktop: () => 10.0,
         ),
         equals(7.0),
       );
@@ -185,6 +192,7 @@ void main() {
           regularDesktop: () => 7.0,
           largeDesktop: () => 8.0,
           extraLargeDesktop: () => 9.0,
+          hugeDesktop: () => 10.0,
         ),
         equals(8.0),
       );
@@ -200,8 +208,25 @@ void main() {
           regularDesktop: () => 7.0,
           largeDesktop: () => 8.0,
           extraLargeDesktop: () => 9.0,
+          hugeDesktop: () => 10.0,
         ),
         equals(9.0),
+      );
+
+      expect(
+        AppBreakpoint.hugeDesktop.when(
+          smallPhone: () => 1.0,
+          regularPhone: () => 2.0,
+          largePhone: () => 3.0,
+          smallTablet: () => 4.0,
+          regularTablet: () => 5.0,
+          smallDesktop: () => 6.0,
+          regularDesktop: () => 7.0,
+          largeDesktop: () => 8.0,
+          extraLargeDesktop: () => 9.0,
+          hugeDesktop: () => 10.0,
+        ),
+        equals(10.0),
       );
     });
   });

@@ -17,53 +17,60 @@ enum AppBreakpoint {
     end: 480,
   ),
 
-  /// Large phone with a screen width ranging from 481 to 768 pixels.
+  /// Large phone with a screen width ranging from 481 to 640 pixels.
   largePhone(
     name: 'LargePhone',
     start: 481,
-    end: 768,
+    end: 640,
   ),
 
-  /// Small tablet with a screen width ranging from 769 to 1024 pixels.
+  /// Small tablet with a screen width ranging from 641 to 720 pixels.
   smallTablet(
     name: 'SmallTablet',
-    start: 769,
-    end: 1024,
+    start: 641,
+    end: 720,
   ),
 
-  /// Regular tablet with a screen width ranging from 1025 to 1440 pixels.
+  /// Regular tablet with a screen width ranging from 721 to 880 pixels.
   regularTablet(
     name: 'RegularTablet',
-    start: 1025,
-    end: 1440,
+    start: 721,
+    end: 880,
   ),
 
-  /// Small desktop with a screen width ranging from 1441 to 1920 pixels.
+  /// Small desktop with a screen width ranging from 881 to 1080 pixels.
   smallDesktop(
     name: 'SmallDesktop',
-    start: 1441,
+    start: 881,
+    end: 1080,
+  ),
+
+  /// Regular desktop with a screen width ranging from 1081 to 1920 pixels.
+  regularDesktop(
+    name: 'RegularDesktop',
+    start: 1081,
     end: 1920,
   ),
 
-  /// Regular desktop with a screen width ranging from 1921 to 2560 pixels.
-  regularDesktop(
-    name: 'RegularDesktop',
+  /// Large desktop with a screen width ranging from 1921 to 2560 pixels.
+  largeDesktop(
+    name: 'LargeDesktop',
     start: 1921,
     end: 2560,
   ),
 
-  /// Large desktop with a screen width ranging from 2561 to 3840 pixels.
-  largeDesktop(
-    name: 'LargeDesktop',
+  /// Extra large desktop with a screen width ranging from 2561 to 3840 pixels.
+  extraLargeDesktop(
+    name: 'ExtraLargeDesktop',
     start: 2561,
     end: 3840,
   ),
 
-  /// Extra large desktop with a screen width ranging from 3841 to 5500 pixels.
-  extraLargeDesktop(
-    name: 'ExtraLargeDesktop',
+  /// Huge desktop with a screen width ranging from 3841 to 5760 pixels.
+  hugeDesktop(
+    name: 'hugeDesktop',
     start: 3841,
-    end: 5500,
+    end: 5760,
   );
 
   /// Creates an instance of [AppBreakpoint].
@@ -96,6 +103,7 @@ enum AppBreakpoint {
     required TResult Function() regularDesktop,
     required TResult Function() largeDesktop,
     required TResult Function() extraLargeDesktop,
+    required TResult Function() hugeDesktop,
   }) {
     final handlers = <AppBreakpoint, TResult Function()>{
       AppBreakpoint.smallPhone: smallPhone,
@@ -107,6 +115,7 @@ enum AppBreakpoint {
       AppBreakpoint.regularDesktop: regularDesktop,
       AppBreakpoint.largeDesktop: largeDesktop,
       AppBreakpoint.extraLargeDesktop: extraLargeDesktop,
+      AppBreakpoint.hugeDesktop: hugeDesktop,
     };
 
     // Ensure all enum values are covered
