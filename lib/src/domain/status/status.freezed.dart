@@ -107,6 +107,9 @@ class _$StatusCopyWithImpl<$Res, $Val extends Status>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -123,6 +126,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -262,6 +268,9 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -401,6 +410,9 @@ class __$$EmptyImplCopyWithImpl<$Res>
   __$$EmptyImplCopyWithImpl(
       _$EmptyImpl _value, $Res Function(_$EmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -540,6 +552,9 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -684,6 +699,8 @@ class __$$StatusFailureImplCopyWithImpl<$Res>
       _$StatusFailureImpl _value, $Res Function(_$StatusFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -697,6 +714,8 @@ class __$$StatusFailureImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FailureCopyWith<$Res> get failure {
@@ -732,7 +751,9 @@ class _$StatusFailureImpl extends _StatusFailure {
   @override
   int get hashCode => Object.hash(runtimeType, failure);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StatusFailureImplCopyWith<_$StatusFailureImpl> get copyWith =>
@@ -842,7 +863,10 @@ abstract class _StatusFailure extends Status {
   const _StatusFailure._() : super._();
 
   Failure get failure;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StatusFailureImplCopyWith<_$StatusFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -861,6 +885,9 @@ class __$$RefreshingImplCopyWithImpl<$Res>
   __$$RefreshingImplCopyWithImpl(
       _$RefreshingImpl _value, $Res Function(_$RefreshingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1000,6 +1027,9 @@ class __$$CacheSuccessImplCopyWithImpl<$Res>
   __$$CacheSuccessImplCopyWithImpl(
       _$CacheSuccessImpl _value, $Res Function(_$CacheSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1144,6 +1174,8 @@ class __$$CacheFailureImplCopyWithImpl<$Res>
       _$CacheFailureImpl _value, $Res Function(_$CacheFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1157,6 +1189,8 @@ class __$$CacheFailureImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FailureCopyWith<$Res> get failure {
@@ -1192,7 +1226,9 @@ class _$CacheFailureImpl extends _CacheFailure {
   @override
   int get hashCode => Object.hash(runtimeType, failure);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CacheFailureImplCopyWith<_$CacheFailureImpl> get copyWith =>
@@ -1302,7 +1338,10 @@ abstract class _CacheFailure extends Status {
   const _CacheFailure._() : super._();
 
   Failure get failure;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CacheFailureImplCopyWith<_$CacheFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
