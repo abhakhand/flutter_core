@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'status.freezed.dart';
 
 @freezed
-class Status with _$Status {
+abstract class Status with _$Status {
   const Status._();
 
   const factory Status.initial() = StatusInitial;
