@@ -7,17 +7,17 @@ part 'status.freezed.dart';
 class Status with _$Status {
   const Status._();
 
-  const factory Status.initial() = _Initial;
-  const factory Status.loading() = _Loading;
-  const factory Status.empty() = _Empty;
-  const factory Status.success() = _Success;
+  const factory Status.initial() = StatusInitial;
+  const factory Status.loading() = StatusLoading;
+  const factory Status.empty() = StatusEmpty;
+  const factory Status.success() = StatusSuccess;
   const factory Status.failure([@Default(Failure.basic('')) Failure failure]) =
-      _StatusFailure;
-  const factory Status.refreshing() = _Refreshing;
-  const factory Status.cacheSuccess() = _CacheSuccess;
+      StatusFailure;
+  const factory Status.refreshing() = StatusRefreshing;
+  const factory Status.cacheSuccess() = StatusCacheSuccess;
   const factory Status.cacheFailure([
     @Default(Failure.cache('')) Failure failure,
-  ]) = _CacheFailure;
+  ]) = StatusCacheFailure;
 
   bool get isInitial => this == const Status.initial();
   bool get isLoading => this == const Status.loading();

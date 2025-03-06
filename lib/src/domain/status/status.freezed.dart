@@ -45,8 +45,8 @@ $StatusCopyWith(Status _, $Res Function(Status) __);
 /// @nodoc
 
 
-class _Initial extends Status {
-  const _Initial(): super._();
+class StatusInitial extends Status {
+  const StatusInitial(): super._();
   
 
 
@@ -56,7 +56,7 @@ class _Initial extends Status {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StatusInitial);
 }
 
 
@@ -77,8 +77,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loading extends Status {
-  const _Loading(): super._();
+class StatusLoading extends Status {
+  const StatusLoading(): super._();
   
 
 
@@ -88,7 +88,7 @@ class _Loading extends Status {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StatusLoading);
 }
 
 
@@ -109,8 +109,8 @@ String toString() {
 /// @nodoc
 
 
-class _Empty extends Status {
-  const _Empty(): super._();
+class StatusEmpty extends Status {
+  const StatusEmpty(): super._();
   
 
 
@@ -120,7 +120,7 @@ class _Empty extends Status {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Empty);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StatusEmpty);
 }
 
 
@@ -141,8 +141,8 @@ String toString() {
 /// @nodoc
 
 
-class _Success extends Status {
-  const _Success(): super._();
+class StatusSuccess extends Status {
+  const StatusSuccess(): super._();
   
 
 
@@ -152,7 +152,7 @@ class _Success extends Status {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Success);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StatusSuccess);
 }
 
 
@@ -173,8 +173,8 @@ String toString() {
 /// @nodoc
 
 
-class _StatusFailure extends Status {
-  const _StatusFailure([this.failure = const Failure.basic('')]): super._();
+class StatusFailure extends Status {
+  const StatusFailure([this.failure = const Failure.basic('')]): super._();
   
 
 @JsonKey() final  Failure failure;
@@ -183,13 +183,13 @@ class _StatusFailure extends Status {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$StatusFailureCopyWith<_StatusFailure> get copyWith => __$StatusFailureCopyWithImpl<_StatusFailure>(this, _$identity);
+$StatusFailureCopyWith<StatusFailure> get copyWith => _$StatusFailureCopyWithImpl<StatusFailure>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StatusFailure&&(identical(other.failure, failure) || other.failure == failure));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StatusFailure&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
@@ -205,8 +205,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$StatusFailureCopyWith<$Res> implements $StatusCopyWith<$Res> {
-  factory _$StatusFailureCopyWith(_StatusFailure value, $Res Function(_StatusFailure) _then) = __$StatusFailureCopyWithImpl;
+abstract mixin class $StatusFailureCopyWith<$Res> implements $StatusCopyWith<$Res> {
+  factory $StatusFailureCopyWith(StatusFailure value, $Res Function(StatusFailure) _then) = _$StatusFailureCopyWithImpl;
 @useResult
 $Res call({
  Failure failure
@@ -217,17 +217,17 @@ $FailureCopyWith<$Res> get failure;
 
 }
 /// @nodoc
-class __$StatusFailureCopyWithImpl<$Res>
-    implements _$StatusFailureCopyWith<$Res> {
-  __$StatusFailureCopyWithImpl(this._self, this._then);
+class _$StatusFailureCopyWithImpl<$Res>
+    implements $StatusFailureCopyWith<$Res> {
+  _$StatusFailureCopyWithImpl(this._self, this._then);
 
-  final _StatusFailure _self;
-  final $Res Function(_StatusFailure) _then;
+  final StatusFailure _self;
+  final $Res Function(StatusFailure) _then;
 
 /// Create a copy of Status
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? failure = null,}) {
-  return _then(_StatusFailure(
+  return _then(StatusFailure(
 null == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
 as Failure,
   ));
@@ -248,8 +248,8 @@ $FailureCopyWith<$Res> get failure {
 /// @nodoc
 
 
-class _Refreshing extends Status {
-  const _Refreshing(): super._();
+class StatusRefreshing extends Status {
+  const StatusRefreshing(): super._();
   
 
 
@@ -259,7 +259,7 @@ class _Refreshing extends Status {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Refreshing);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StatusRefreshing);
 }
 
 
@@ -280,8 +280,8 @@ String toString() {
 /// @nodoc
 
 
-class _CacheSuccess extends Status {
-  const _CacheSuccess(): super._();
+class StatusCacheSuccess extends Status {
+  const StatusCacheSuccess(): super._();
   
 
 
@@ -291,7 +291,7 @@ class _CacheSuccess extends Status {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CacheSuccess);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StatusCacheSuccess);
 }
 
 
@@ -312,8 +312,8 @@ String toString() {
 /// @nodoc
 
 
-class _CacheFailure extends Status {
-  const _CacheFailure([this.failure = const Failure.cache('')]): super._();
+class StatusCacheFailure extends Status {
+  const StatusCacheFailure([this.failure = const Failure.cache('')]): super._();
   
 
 @JsonKey() final  Failure failure;
@@ -322,13 +322,13 @@ class _CacheFailure extends Status {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$CacheFailureCopyWith<_CacheFailure> get copyWith => __$CacheFailureCopyWithImpl<_CacheFailure>(this, _$identity);
+$StatusCacheFailureCopyWith<StatusCacheFailure> get copyWith => _$StatusCacheFailureCopyWithImpl<StatusCacheFailure>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CacheFailure&&(identical(other.failure, failure) || other.failure == failure));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StatusCacheFailure&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
@@ -344,8 +344,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$CacheFailureCopyWith<$Res> implements $StatusCopyWith<$Res> {
-  factory _$CacheFailureCopyWith(_CacheFailure value, $Res Function(_CacheFailure) _then) = __$CacheFailureCopyWithImpl;
+abstract mixin class $StatusCacheFailureCopyWith<$Res> implements $StatusCopyWith<$Res> {
+  factory $StatusCacheFailureCopyWith(StatusCacheFailure value, $Res Function(StatusCacheFailure) _then) = _$StatusCacheFailureCopyWithImpl;
 @useResult
 $Res call({
  Failure failure
@@ -356,17 +356,17 @@ $FailureCopyWith<$Res> get failure;
 
 }
 /// @nodoc
-class __$CacheFailureCopyWithImpl<$Res>
-    implements _$CacheFailureCopyWith<$Res> {
-  __$CacheFailureCopyWithImpl(this._self, this._then);
+class _$StatusCacheFailureCopyWithImpl<$Res>
+    implements $StatusCacheFailureCopyWith<$Res> {
+  _$StatusCacheFailureCopyWithImpl(this._self, this._then);
 
-  final _CacheFailure _self;
-  final $Res Function(_CacheFailure) _then;
+  final StatusCacheFailure _self;
+  final $Res Function(StatusCacheFailure) _then;
 
 /// Create a copy of Status
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? failure = null,}) {
-  return _then(_CacheFailure(
+  return _then(StatusCacheFailure(
 null == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
 as Failure,
   ));
