@@ -8,19 +8,17 @@ void main() {
       const failure = AuthFailure.basic(message);
       expect(failure, isA<AuthFailure>());
       expect(failure, equals(const AuthFailure.basic(message)));
-      expect(
-        failure.map(
-          basic: (e) => e.message,
-          invalidEmail: (_) => null,
-          weakPassword: (_) => null,
-          emailAlreadyInUse: (_) => null,
-          userNotFound: (_) => null,
-          wrongPassword: (_) => null,
-          cancelledByUser: (_) => null,
-          accountAlreadyExist: (_) => null,
-        ),
-        equals(message),
-      );
+      expect(switch (failure) {
+        BasicAuthFailure(:final message) => message,
+        InvalidEmail() => null,
+        WeakPassword() => null,
+        EmailAlreadyInUse() => null,
+        UserNotFound() => null,
+        WrongPassword() => null,
+        CancelledByUser() => null,
+        AccountAlreadyExist() => null,
+        _ => null,
+      }, equals(message));
     });
 
     test('AuthFailure.invalidEmail creates an instance', () {

@@ -15,43 +15,43 @@ part 'failure.freezed.dart';
 /// final failure = Failure.basic();
 /// ```
 @freezed
-class Failure with _$Failure implements Exception {
+abstract class Failure with _$Failure implements Exception {
   /// Creates a basic failure with no additional information.
   ///
   /// This can be used for generic failures that do not
   /// require specific details.
-  const factory Failure.basic(String? message) = _Basic;
+  const factory Failure.basic(String? message) = BasicFailure;
 
   /// Creates a value failure with no additional information.
   ///
   /// This type can be used for failures related to invalid or
   /// unexpected values.
-  const factory Failure.value() = _Value;
+  const factory Failure.value() = ValueFailure;
 
   /// Creates a connection failure with no additional information.
   ///
   /// This type indicates issues with network connectivity or server connection.
-  const factory Failure.connection() = _Connection;
+  const factory Failure.connection() = ConnectionFailure;
 
   /// Creates an unexpected failure with an optional message.
   ///
   /// This type represents failures that are not expected or
   /// cannot be classified into other failure types.
   /// The [message] parameter can provide additional details.
-  const factory Failure.unexpected(String? message) = _Unexpected;
+  const factory Failure.unexpected(String? message) = UnexpectedFailure;
 
   /// Creates an API failure with an optional [code] and [message].
   ///
   /// This type represents errors that occur when interacting with an API.
   /// The [code] can be used to specify the HTTP status code, and the [message]
   /// provides additional context about the failure.
-  const factory Failure.api({int? code, String? message}) = _ApiFailure;
+  const factory Failure.api({int? code, String? message}) = ApiFailure;
 
   /// Creates a cache failure with an optional [message].
   ///
   /// This type indicates issues related to cache operations. The [message]
   /// can provide additional context about the failure.
-  const factory Failure.cache(String? message) = _CacheFailure;
+  const factory Failure.cache(String? message) = CacheFailure;
 
   /// Creates an authentication failure with an [AuthFailure] instance.
   ///

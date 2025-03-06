@@ -10,27 +10,27 @@ part 'auth_failure.freezed.dart';
 ///
 /// It implements [Exception] to be used as a throw-able type.
 @freezed
-class AuthFailure with _$AuthFailure implements Exception {
+abstract class AuthFailure with _$AuthFailure implements Exception {
   /// Represents a basic authentication failure with an optional [message].
   ///
   /// **Message:** An optional string that provides additional
   /// details about the failure.
-  const factory AuthFailure.basic(String? message) = _Basic;
+  const factory AuthFailure.basic(String? message) = BasicAuthFailure;
 
   /// Represents a failure where the provided email is invalid.
-  const factory AuthFailure.invalidEmail() = _InvalidEmail;
+  const factory AuthFailure.invalidEmail() = InvalidEmail;
 
   /// Represents a failure where the provided password is too weak.
-  const factory AuthFailure.weakPassword() = _WeakPassword;
+  const factory AuthFailure.weakPassword() = WeakPassword;
 
   /// Represents a failure where the email is already in use by another account.
-  const factory AuthFailure.emailAlreadyInUse() = _EmailAlreadyInUse;
+  const factory AuthFailure.emailAlreadyInUse() = EmailAlreadyInUse;
 
   /// Represents a failure where the specified user is not found.
-  const factory AuthFailure.userNotFound() = _UserNotFound;
+  const factory AuthFailure.userNotFound() = UserNotFound;
 
   /// Represents a failure where the provided password is incorrect.
-  const factory AuthFailure.wrongPassword() = _WrongPassword;
+  const factory AuthFailure.wrongPassword() = WrongPassword;
 
   /// Represents a failure where the authentication process was
   /// cancelled by the user.
@@ -38,5 +38,5 @@ class AuthFailure with _$AuthFailure implements Exception {
 
   /// Represents a failure where an account with the provided
   /// details already exists.
-  const factory AuthFailure.accountAlreadyExist() = _AccountAlreadyExist;
+  const factory AuthFailure.accountAlreadyExist() = AccountAlreadyExist;
 }
